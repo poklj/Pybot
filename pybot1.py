@@ -28,7 +28,7 @@ import time
 import sys
 import math
 import os
-
+import datetime
 # - To here
 
 #User settings Edit these as needed
@@ -159,10 +159,19 @@ def do_Points():
     usersin = hexchat.get_list('users')
     ulist = []
     utime = []
+    u
     if usersin:
         for i in list:
             debug("%a" % (usersin.nick))
             ulist.append(usersin.nick)
+
+            #Create timestamps when a new user joins
+            utime.append(datetime.time(2))
+
+        for index, x in enumerate(utime):
+            if(x==x+5):
+                lPointP[index] += 1
+                utime[index] = datetime.time(2)
 
         #TODO: Create a method to Calculate the time that a specific user has been in the chat, and give points per a specified amount of time
 
@@ -171,7 +180,6 @@ def do_Points():
 def write_Points():
     #TODO: Create the Write Points function
     #NOTE: |This will contain the Point file write function and Will be interacted with on shut-down or by do_Points during Auto-saves | IN PROGRESS
-    # Gives user's home directory
     pass
 
 #Beginning of call
